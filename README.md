@@ -16,4 +16,9 @@ The user_posting_emulation.py file is run and it prints out the pin_result, geo_
 
 The next step in Milestone 2, is to login in to the AWS account with the credentials we are given from the project. The password is then changed for security reasons.
 
-In Milestone 3, a .pem file is created with a key pair combination this file eventually helps connect to the EC2 instance setup.
+In Milestone 3, a .pem file is created with a key pair combination this file eventually helps connect to the EC2 instance setup. Then the EC2 instance is setup, thereafter, Kafka is setup on the EC2 instance whilst the following Kafka topics are also created:
+
+-0affc56add51.pin
+-0affc56add51.geo
+-0affc56add51.user
+
