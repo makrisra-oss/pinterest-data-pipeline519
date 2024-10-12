@@ -28,7 +28,7 @@ Milestone 5, finally, creates an API gateway that sends data to the MSK cluster,
 
 With the pipeline created in Milestones 1 to 5, it is now possible to setup the Databricks account which reads data from AWS into Databricks which is accomplished in Milestone 6.
 
-Milestone 7 serves the purpose of batch processing the data using Spark on Databricks and covers the following tasks which have been completed:
+Milestone 7 serves the purpose of batch processing the data using Spark on Databricks, cleaning and querying the data which covers the following tasks that have been completed:
 
 Task 1:
 
