@@ -123,9 +123,9 @@ Task 7:
 
 What is the most popular category people post to based on the following age groups:
 
-18-24
-25-35
-36-50
+18-24,
+25-35,
+36-50,
 +50
 Your query should return a DataFrame that contains the following columns:
 
@@ -137,9 +137,9 @@ Task 8:
 
 What is the median follower count for users in the following age groups:
 
-18-24
-25-35
-36-50
+18-24,
+25-35,
+36-50,
 +50
 Your query should return a DataFrame that contains the following columns:
 
