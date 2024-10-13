@@ -1,0 +1,104 @@
+[2024-10-13T14:08:48.988+0100] {processor.py:186} INFO - Started process (PID=67211) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:08:48.988+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T14:08:48.988+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:48.988+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:08:49.012+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:08:49.043+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.043+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T14:08:49.081+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.081+0100] {override.py:1901} INFO - Created Permission View: can delete on DAG:example_sensors
+[2024-10-13T14:08:49.084+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.084+0100] {override.py:1901} INFO - Created Permission View: can edit on DAG:example_sensors
+[2024-10-13T14:08:49.086+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.086+0100] {override.py:1901} INFO - Created Permission View: can read on DAG:example_sensors
+[2024-10-13T14:08:49.089+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.089+0100] {override.py:1901} INFO - Created Permission View: menu access on DAG Run:example_sensors
+[2024-10-13T14:08:49.091+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.090+0100] {override.py:1901} INFO - Created Permission View: can delete on DAG Run:example_sensors
+[2024-10-13T14:08:49.092+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.092+0100] {override.py:1901} INFO - Created Permission View: can read on DAG Run:example_sensors
+[2024-10-13T14:08:49.094+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.094+0100] {override.py:1901} INFO - Created Permission View: can create on DAG Run:example_sensors
+[2024-10-13T14:08:49.094+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.094+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T14:08:49.098+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.098+0100] {dag.py:3262} INFO - Creating ORM DAG for example_sensors
+[2024-10-13T14:08:49.098+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:08:49.098+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T14:08:49.104+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.118 seconds
+[2024-10-13T14:10:27.220+0100] {processor.py:186} INFO - Started process (PID=67312) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:10:27.221+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T14:10:27.222+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:10:27.221+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:10:27.246+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:10:27.278+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:10:27.278+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T14:10:27.286+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:10:27.286+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T14:10:27.290+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:10:27.289+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T14:10:27.296+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.078 seconds
+[2024-10-13T14:12:33.526+0100] {processor.py:186} INFO - Started process (PID=67457) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:12:33.527+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T14:12:33.527+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:12:33.527+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:12:33.560+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:12:33.595+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:12:33.595+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T14:12:33.604+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:12:33.604+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T14:12:33.608+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:12:33.608+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T14:12:33.615+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.092 seconds
+[2024-10-13T14:14:42.690+0100] {processor.py:186} INFO - Started process (PID=67611) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:14:42.690+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T14:14:42.691+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:14:42.690+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:14:42.719+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:14:42.754+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:14:42.754+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T14:14:42.763+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:14:42.763+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T14:14:42.767+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:14:42.767+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T14:14:42.774+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.086 seconds
+[2024-10-13T14:18:05.967+0100] {processor.py:186} INFO - Started process (PID=67740) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:18:05.968+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T14:18:05.968+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:18:05.968+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:18:05.991+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T14:18:06.021+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:18:06.021+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T14:18:06.029+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:18:06.029+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T14:18:06.032+0100] {logging_mixin.py:190} INFO - [2024-10-13T14:18:06.032+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T14:18:06.038+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.073 seconds
+[2024-10-13T15:14:22.488+0100] {processor.py:186} INFO - Started process (PID=67976) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:14:22.488+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:14:22.488+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:14:22.488+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:14:22.513+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:14:22.543+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:14:22.543+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:14:22.552+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:14:22.551+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:14:22.555+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:14:22.555+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:14:22.562+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.076 seconds
+[2024-10-13T15:15:38.309+0100] {processor.py:186} INFO - Started process (PID=68054) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:15:38.309+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:15:38.310+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:15:38.310+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:15:38.336+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:15:38.368+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:15:38.367+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:15:38.376+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:15:38.376+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:15:38.379+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:15:38.379+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:15:38.386+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.078 seconds
+[2024-10-13T15:17:49.428+0100] {processor.py:186} INFO - Started process (PID=68174) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:17:49.429+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:17:49.430+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:17:49.429+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:17:49.453+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:17:49.484+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:17:49.484+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:17:49.492+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:17:49.492+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:17:49.496+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:17:49.496+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:17:49.502+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.075 seconds
+[2024-10-13T15:20:02.790+0100] {processor.py:186} INFO - Started process (PID=68306) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:20:02.790+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:20:02.791+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:20:02.791+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:20:02.819+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:20:02.853+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:20:02.853+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:20:02.862+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:20:02.862+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:20:02.866+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:20:02.866+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:20:02.873+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.085 seconds
+[2024-10-13T15:22:10.420+0100] {processor.py:186} INFO - Started process (PID=68474) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:22:10.421+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:22:10.421+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:22:10.421+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:22:10.448+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:22:10.481+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:22:10.481+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:22:10.489+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:22:10.489+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:22:10.493+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:22:10.493+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:22:10.499+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.081 seconds
+[2024-10-13T15:24:17.404+0100] {processor.py:186} INFO - Started process (PID=68635) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:24:17.405+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:24:17.405+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:24:17.405+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:24:17.431+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:24:17.462+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:24:17.462+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:24:17.471+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:24:17.470+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:24:17.475+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:24:17.474+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:24:17.482+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.080 seconds
+[2024-10-13T15:26:25.737+0100] {processor.py:186} INFO - Started process (PID=68803) to work on /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:26:25.738+0100] {processor.py:914} INFO - Processing file /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2024-10-13T15:26:25.739+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:26:25.739+0100] {dagbag.py:588} INFO - Filling up the DagBag from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:26:25.765+0100] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py
+[2024-10-13T15:26:25.796+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:26:25.796+0100] {workday.py:41} WARNING - Could not import pandas. Holidays will not be considered.
+[2024-10-13T15:26:25.805+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:26:25.804+0100] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-13T15:26:25.808+0100] {logging_mixin.py:190} INFO - [2024-10-13T15:26:25.808+0100] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2024-10-13T15:26:25.815+0100] {processor.py:208} INFO - Processing /opt/homebrew/Caskroom/miniconda/base/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_sensors.py took 0.079 seconds
