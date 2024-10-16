@@ -65,6 +65,7 @@ infer_schema = "true"
 df_user = spark.read.format("json") \
 .option("inferSchema", infer_schema) \
 .load(file_location)
+DB
 display(df_user)
 
 # COMMAND ----------
@@ -477,3 +478,5 @@ print(df_median_follower.columns)
 display(df_median_follower)
 
 
+=======
+display(df_user)
