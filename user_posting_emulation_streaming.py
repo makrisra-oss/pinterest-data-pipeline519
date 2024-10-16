@@ -1,4 +1,5 @@
 import requests
+import json
 from time import sleep
 import random
 from multiprocessing import Process
@@ -13,7 +14,7 @@ import yaml
 random.seed(100)
 
 def load_db_credentials():
-        with open('db_creds.yaml', 'r') as file:
+        with open('db_creds_streaming.yaml', 'r') as file:
             data = yaml.load(file, Loader=yaml.FullLoader)
         return data
 
@@ -21,8 +22,7 @@ creds = load_db_credentials()
 print("CREDS: ", creds)
 
 class AWSDBConnector:
-
-    def __init__(self):
+    def __init__(self, creds):
 
         self.HOST = creds['HOST']
         self.USER = creds['USER']
@@ -35,9 +35,7 @@ class AWSDBConnector:
         return engine
 
 
-new_connector = AWSDBConnector()
-
-invoke_url = "https://ufkcjan9a0.execute-api.us-east-1.amazonaws.com/dev"
+new_connector = AWSDBConnector(creds)
 
 def convert_datetime_to_string(data):
     for key, value in data.items():
@@ -45,29 +43,35 @@ def convert_datetime_to_string(data):
             data[key] = value.isoformat()  # Convert datetime to ISO 8601 string
     return data
 
-def send_data_to_api(invoke_url, data):
+def send_data_to_api(data, stream_name):
+
+
+
+    invoke_url = f"https://ufkcjan9a0.execute-api.us-east-1.amazonaws.com/dev/streams/{stream_name}/record"
+
+
+
     """Send the data to the specified API endpoint."""
-    headers = {'Content-Type': 'application/vnd.kafka.json.v2+json'}
+    headers = {'Content-Type': 'application/json'}
     
+
+
     # Convert datetime objects to strings
     data = convert_datetime_to_string(data)
     
     # Prepare the payload
-    data_payload = {
-        "records": [
-            {
-                "key": None,  # Use a specific key if required by your Kafka topic
-                "value": data  # Your actual data
-            }
-        ]
-    }
+    payload = json.dumps({
+    "StreamName": f"{stream_name}",
+    "Data": data,
+    "PartitionKey": "shard_1"
+})
     
     # Print the payload for debugging
     print("Sending data to API:")
-    print(data_payload)
+    print(payload)
     
     # Send the data to the API
-    response = requests.post(invoke_url, headers=headers, json=data_payload)
+    response = requests.request("PUT", invoke_url, headers=headers, data=payload)
 
     if response.status_code == 200:
         print(f"Successfully sent data to {invoke_url}")
@@ -105,9 +109,9 @@ def run_infinite_post_data_loop():
             print(geo_result)
             print(user_result)
 
-            send_data_to_api(f"{invoke_url}/topics/0affc56add51.pin", pin_result)  # Send to the Pinterest topic
-            send_data_to_api(f"{invoke_url}/topics/0affc56add51.geo", geo_result)  # Send to the Geolocation topic
-            send_data_to_api(f"{invoke_url}/topics/0affc56add51.user", user_result) # Send to the User topic
+            send_data_to_api(data=pin_result, stream_name="streaming-0affc56add51-pin")  # Send to the Pinterest topic
+            send_data_to_api(data=geo_result, stream_name="streaming-0affc56add51-geo")  # Send to the Geolocation topic
+            send_data_to_api(user_result, stream_name="streaming-0affc56add51-user") # Send to the User topic
 
 if __name__ == "__main__":
     run_infinite_post_data_loop()
