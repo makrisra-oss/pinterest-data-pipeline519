@@ -1,4 +1,5 @@
 # Databricks notebook source
+"""Restart Python"""
 dbutils.library.restartPython()
 
 # COMMAND ----------
@@ -6,6 +7,8 @@ dbutils.library.restartPython()
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 import urllib
+
+"""Get the AWS access key and secret key from the Delta table"""
 
 # Define the path to the Delta table
 delta_table_path = "dbfs:/user/hive/warehouse/authentication_credentials"
@@ -25,9 +28,10 @@ ENCODED_SECRET_KEY = urllib.parse.quote(string=SECRET_KEY, safe="")
 # MAGIC -- # Disable format checks during the reading of Delta tables
 # MAGIC SET spark.databricks.delta.formatCheck.enabled=false
 # MAGIC
-# MAGIC
 
 # COMMAND ----------
+
+"""Read stream pin data"""
 
 df_pin = spark \
 .readStream \
@@ -43,6 +47,7 @@ display(df_pin)
 
 # COMMAND ----------
 
+"""Cast pin data as string"""
 df_pin_updated = df_pin.selectExpr("CAST(data as STRING)")
 
 display(df_pin_updated)
@@ -53,6 +58,9 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType, 
 from pyspark.sql.functions import from_json
 import pyspark.sql.functions as F
 
+"""Structure schema, explode columns, clean and order pin table"""
+
+#Schema for pin data
 schema_pin = StructType([
     StructField("index", IntegerType(), True),
     StructField("unique_id", StringType(), True),
@@ -68,6 +76,7 @@ schema_pin = StructType([
     StructField("category", StringType(), True)
 ])
 
+#Explode JSON columns for pin data
 mapped_df_pin = df_pin_updated.withColumn("data", from_json(df_pin_updated["data"], schema_pin))\
     .select(col('data.*'))
 
@@ -132,6 +141,7 @@ print(df_pin_cleaned.schema['ind'].dataType)
 
 # COMMAND ----------
 
+"""Read stream for geo data"""
 df_geo = spark \
 .readStream \
 .format('kinesis') \
@@ -146,6 +156,7 @@ display(df_geo)
 
 # COMMAND ----------
 
+"""Cast geo data as string"""
 df_geo_updated = df_geo.selectExpr("CAST(data as STRING)")
 
 display(df_geo_updated)
@@ -156,6 +167,9 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType, 
 from pyspark.sql.functions import from_json
 import pyspark.sql.functions as F
 
+"""Structure schema, explode JSON data and clean and order geo data"""
+
+#Schema for the geo data
 schema_geo = StructType([
     StructField("ind", IntegerType(), True),
     StructField("timestamp", StringType(), True),
@@ -164,6 +178,7 @@ schema_geo = StructType([
     StructField("country", StringType(), True)
 ])
 
+#Exlpoding the geo json data
 mapped_df_geo = df_geo_updated.withColumn("data", from_json(df_geo_updated["data"], schema_geo))\
     .select(col('data.*'))
 
@@ -204,6 +219,7 @@ print(df_geo_cleaned.schema['timestamp'].dataType)
 
 # COMMAND ----------
 
+"""Read the stream for user data"""
 df_user = spark \
 .readStream \
 .format('kinesis') \
@@ -218,6 +234,7 @@ display(df_user)
 
 # COMMAND ----------
 
+"""Cast the user data column to a string data type"""
 df_user_updated = df_user.selectExpr("CAST(data as STRING)")
 
 display(df_user_updated)
@@ -228,6 +245,9 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType, 
 from pyspark.sql.functions import from_json
 import pyspark.sql.functions as F
 
+"""Structure schema, explode JSON data and clean and order user table"""
+
+#Schema for the user data
 schema_user = StructType([
     StructField("ind", IntegerType(), True),
     StructField("first_name", StringType(), True),
@@ -236,6 +256,7 @@ schema_user = StructType([
     StructField("date_joined", StringType(), True)
 ])
 
+#Explode the JSON data into a row of user data
 mapped_df_user = df_user_updated.withColumn("data", from_json(df_user_updated["data"], schema_user))\
     .select(col('data.*'))
 
@@ -270,6 +291,7 @@ print(df_user_cleaned.schema['date_joined'].dataType)
 
 # COMMAND ----------
 
+"""write cleaned pin data frames to Delta tables"""
 df_pin_cleaned.writeStream \
   .format("delta") \
   .outputMode("append") \
@@ -278,6 +300,7 @@ df_pin_cleaned.writeStream \
 
 # COMMAND ----------
 
+"""write cleaned geo data frames to Delta tables"""
 df_geo_cleaned.writeStream \
   .format("delta") \
   .outputMode("append") \
@@ -286,6 +309,7 @@ df_geo_cleaned.writeStream \
 
 # COMMAND ----------
 
+"""write cleaned user data frames to Delta tables"""
 df_user_cleaned.writeStream \
   .format("delta") \
   .outputMode("append") \
@@ -294,4 +318,5 @@ df_user_cleaned.writeStream \
 
 # COMMAND ----------
 
+"""Checkpoint in case of debugging"""
 dbutils.fs.rm("/tmp/kinesis/_checkpoints/", True)
