@@ -6,6 +6,8 @@ import urllib
 
 # COMMAND ----------
 
+"""Gain access to the AWS keys and delta table"""
+
 # Define the path to the Delta table
 delta_table_path = "dbfs:/user/hive/warehouse/authentication_credentials"
 
@@ -27,6 +29,7 @@ ENCODED_SECRET_KEY = urllib.parse.quote(string=SECRET_KEY, safe="")
 
 # COMMAND ----------
 
+"""load df_pin table from s3"""
 file_location = "s3a://user-0affc56add51-bucket/topics/0affc56add51.pin/partition=0/*.json"
 file_type = "json"
 infer_schema = "true"
@@ -43,6 +46,7 @@ display(df_pin)
 
 # COMMAND ----------
 
+"""load df_geo table from s3"""
 file_location = "s3a://user-0affc56add51-bucket/topics/0affc56add51.geo/partition=0/*.json"
 file_type = "json"
 infer_schema = "true"
@@ -59,6 +63,7 @@ display(df_geo)
 
 # COMMAND ----------
 
+"""load df_user table from s3"""
 file_location = "s3a://user-0affc56add51-bucket/topics/0affc56add51.user/partition=0/*.json"
 file_type = "json"
 infer_schema = "true"
@@ -70,15 +75,22 @@ display(df_user)
 
 # COMMAND ----------
 
-# Milestone 7 Task 2
+# Milestone 7 Task 1
 
 from pyspark.sql.functions import col
 from pyspark.sql.types import IntegerType
 from pyspark.sql.functions import col, regexp_replace
 
+"""Clean and order pin data"""
+
+#Drop all null values
+df_pin_updated = df_pin.dropna(how='all')
+
+#Drop duplicates
+df_pin_updated = df_pin_updated.dropDuplicates()
 
 #Replace empty strings and irrelevant data with null
-df_pin_updated = df_pin.replace('', None)
+df_pin_updated = df_pin_updated.replace('', None)
 df_pin_updated = df_pin_updated.replace('No description available Story format', None)
 
 #Perform the necessary transformations on the follower_count to ensure every entry is a number. Make sure the data type of this column is an int.
@@ -130,6 +142,14 @@ print(df_pin_updated.schema['ind'].dataType)
 
 # Milestone 7 Task 2
 
+"""Clean and order geo table"""
+
+#Drop all null values
+df_geo = df_geo.dropna(how='all')
+
+#Drop duplicates
+df_geo = df_geo.dropDuplicates()
+
 # Create a new column coordinates that contains an array based on the latitude and longitude columns
 
 df_geo = df_geo.withColumn("coordinates", array("latitude", "longitude"))
@@ -157,6 +177,14 @@ print(df_geo.schema['timestamp'].dataType)
 # COMMAND ----------
 
 # Milestone 7 Task 3
+
+"""Clean and order user table"""
+
+#Drop all null values
+df_user_updated = df_user.dropna(how='all')
+
+#Drop duplicates
+df_user_updated = df_user_updated.dropDuplicates()
 
 # Create a new column user_name that concatenates the information found in the first_name and last_name columns
 
@@ -187,7 +215,7 @@ print(df_user.schema['date_joined'].dataType)
 
 from pyspark.sql import functions as F
 
-# Find the most popular Pinterest category people post to based on their country.
+"""Find the most popular Pinterest category people post to based on their country."""
 
 
 # Your query should return a DataFrame that contains the following columns:
@@ -212,7 +240,7 @@ display(grouped_df)
 
 #Milestone 7 Task 5
 
-# Find how many posts each category had between 2018 and 2022.
+"""Find how many posts each category had between 2018 and 2022."""
 
 
 # Your query should return a DataFrame that contains the following columns:
@@ -238,7 +266,7 @@ display(five_updated_df)
 
 # #Milestone 7 Task 6
 
-# Step 1: For each country find the user with the most followers.
+"""Step 1: For each country find the user with the most followers."""
 
 # Your query should return a DataFrame that contains the following columns:
 
@@ -259,7 +287,7 @@ six_updated_df = six_updated_df.groupBy("country", "poster_name", "follower_coun
 
 six_updated_df = six_updated_df.orderBy(F.desc("follower_count"))
 
-# Step 2: Based on the above query, find the country with the user with most followers.
+"""Step 2: Based on the above query, find the country with the user with most followers."""
 
 
 # Your query should return a DataFrame that contains the following columns:
@@ -292,7 +320,7 @@ display(country_with_top_user)
 
 # Milestone 7 Task 7:
 
-# What is the most popular category people post to based on the following age groups:
+"""What is the most popular category people post to based on the following age groups:"""
 
 # 18-24
 # 25-35
@@ -344,7 +372,9 @@ print(most_popular_category_df.columns)
 
 # COMMAND ----------
 
-# Milestone 7 What is the median follower count for users in the following age groups:
+# Milestone 7
+
+"""What is the median follower count for users in the following age groups:"""
 
 18-24
 25-35
@@ -384,8 +414,7 @@ display(df_with_age_group)
 
 # Milestone 7 Task 9
 
-# Find how many users have joined between 2015 and 2020.
-
+"""Find how many users have joined between 2015 and 2020."""
 
 # Your query should return a DataFrame that contains the following columns:
 
@@ -416,8 +445,7 @@ display(df_user_joined_count)
 
 # Milestone 7 Task 10
 
-# Find the median follower count of users have joined between 2015 and 2020.
-
+"""Find the median follower count of users have joined between 2015 and 2020."""
 
 # Your query should return a DataFrame that contains the following columns:
 
@@ -445,8 +473,7 @@ display(df_median_follower)
 
 # Milestone 7 Task 11
 
-# Find the median follower count of users that have joined between 2015 and 2020, based on which age group they are part of.
-
+"""Find the median follower count of users that have joined between 2015 and 2020, based on which age group they are part of."""
 
 # Your query should return a DataFrame that contains the following columns:
 
