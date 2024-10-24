@@ -34,7 +34,6 @@ class AWSDBConnector:
         engine = sqlalchemy.create_engine(f"mysql+pymysql://{self.USER}:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.DATABASE}?charset=utf8mb4")
         return engine
 
-
 new_connector = AWSDBConnector()
 
 invoke_url = "https://ufkcjan9a0.execute-api.us-east-1.amazonaws.com/dev"
@@ -73,7 +72,6 @@ def send_data_to_api(invoke_url, data):
         print(f"Successfully sent data to {invoke_url}")
     else:
         print(f"Failed to send data. Status Code: {response.status_code}, Response: {response.text}")
-
 
 def run_infinite_post_data_loop():
     while True:

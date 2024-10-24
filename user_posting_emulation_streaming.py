@@ -10,7 +10,6 @@ from sqlalchemy import text
 from datetime import datetime
 import yaml
 
-
 random.seed(100)
 
 def load_db_credentials():
@@ -34,7 +33,6 @@ class AWSDBConnector:
         engine = sqlalchemy.create_engine(f"mysql+pymysql://{self.USER}:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.DATABASE}?charset=utf8mb4")
         return engine
 
-
 new_connector = AWSDBConnector(creds)
 
 def convert_datetime_to_string(data):
@@ -45,17 +43,11 @@ def convert_datetime_to_string(data):
 
 def send_data_to_api(data, stream_name):
 
-
-
     invoke_url = f"https://ufkcjan9a0.execute-api.us-east-1.amazonaws.com/dev/streams/{stream_name}/record"
-
-
 
     """Send the data to the specified API endpoint."""
     headers = {'Content-Type': 'application/json'}
     
-
-
     # Convert datetime objects to strings
     data = convert_datetime_to_string(data)
     
@@ -77,7 +69,6 @@ def send_data_to_api(data, stream_name):
         print(f"Successfully sent data to {invoke_url}")
     else:
         print(f"Failed to send data. Status Code: {response.status_code}, Response: {response.text}")
-
 
 def run_infinite_post_data_loop():
     while True:
